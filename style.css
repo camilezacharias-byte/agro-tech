@@ -1,0 +1,190 @@
+:root {
+    --bg-principal: #f4f7f6;
+    --bg-card: #ffffff;
+    --texto-p: #2d3748;
+    --texto-s: #718096;
+    --primary: #1b4332;
+    --primary-light: #2d6a4f;
+    --accent: #52b788;
+    --danger: #e53e3e;
+    --border: #e2e8f0;
+}
+
+[data-theme="dark"] {
+    --bg-principal: #0f172a;
+    --bg-card: #1e293b;
+    --texto-p: #f1f5f9;
+    --texto-s: #94a3b8;
+    --primary: #52b788;
+    --primary-light: #74c69d;
+    --border: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-p);
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+.logo span { color: var(--accent); }
+
+.btn-theme {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--texto-p);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-theme:hover { background-color: var(--bg-principal); }
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #1b4332 0%, #081c15 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -1px; }
+.hero p { color: #b7e4c7; max-width: 600px; margin: 0 auto; font-size: 16px; }
+
+/* DASHBOARD */
+.dashboard {
+    max-width: 1200px;
+    margin: -40px auto 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card-title { font-size: 20px; font-weight: 700; color: var(--primary); }
+
+/* FILTROS */
+.filter-group { display: flex; gap: 8px; }
+.btn-filter {
+    background-color: var(--bg-principal);
+    border: 1px solid var(--border);
+    color: var(--texto-s);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+.btn-filter.active {
+    background-color: var(--primary-light);
+    color: white;
+    border-color: var(--primary-light);
+}
+
+/* QUIZ */
+.quiz-container { text-align: center; max-width: 700px; margin: 0 auto; }
+.quiz-progress {
+    font-size: 14px;
+    color: var(--texto-s);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.question-text { font-size: 22px; font-weight: 700; margin-bottom: 25px; }
+
+.options-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.option-item {
+    background-color: var(--bg-principal);
+    border: 1px solid var(--border);
+    color: var(--texto-p);
+    padding: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.option-item:hover {
+    border-color: var(--primary-light);
+    background-color: rgba(82, 183, 136, 0.05);
+}
+
+.btn-next {
+    background-color: var(--primary-light);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    display: none;
+    margin: 0 auto;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--texto-s);
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    background-color: var(--bg-card);
+}
+
+@media (max-width: 768px) {
+    header { padding: 15px 20px; flex-direction: column; gap: 10px; }
+    .card-header { flex-direction: column; align-items: flex-start; }
+    .filter-group { width: 100%; overflow-x: auto; }
+}
