@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtividade com Consciência | AgroSphere</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Produtividade com <span>Consciência</span></div>
+        <button class="btn-theme" onclick="toggleTheme()">🌓 Alternar Aparência</button>
+    </header>
+
+    <section class="hero">
+        <h2>Produtividade com Consciência</h2>
+        <p>Monitore métricas de impacto e participe da simulação de decisões em nossa central de inteligência técnica.</p>
+    </section>
+
+    <main class="dashboard">
+        
+        <section class="card">
+            <div class="card-header">
+                <div class="card-title">📈 Indicadores de Produtividade & Impacto</div>
+                <div class="filter-group">
+                    <button class="btn-filter active" onclick="updateChartData('geral', this)">Visão Geral</button>
+                    <button class="btn-filter" onclick="updateChartData('agua', this)">Eficiência Hídrica</button>
+                    <button class="btn-filter" onclick="updateChartData('carbono', this)">Pegada de Carbono</button>
+                </div>
+            </div>
+            <div style="position: relative; height:350px; width:100%">
+                <canvas id="analyticsChart"></canvas>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="quiz-container" id="quiz-wrapper">
+                <div class="quiz-progress" id="progress">Desafio: Pergunta 1 de 3</div>
+                <div class="question-text" id="question">Carregando questionário...</div>
+                
+                <div class="options-list" id="options-container">
+                    </div>
+
+                <button class="btn-next" id="next-btn" onclick="nextQuestion()">Próxima Etapa</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Produtividade com Consciência. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
